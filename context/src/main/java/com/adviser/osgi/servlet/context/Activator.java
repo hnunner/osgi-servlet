@@ -12,6 +12,11 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
 
 /**
+ * This example shows a lifecycle related problem which can occur when retrieving OSGi services via the BundleContext.
+ * The main problem is, that the HttpService is requested at a certain and single point of time. The according feature
+ * might be deployed already, but might not have finished its startup process. If the HttpService is not available,
+ * the bundle cannot be started due to a resulting exception.
+ *
  * @author h.nunner
  */
 public class Activator implements BundleActivator {
