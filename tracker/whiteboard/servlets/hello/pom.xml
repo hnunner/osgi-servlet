@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.adviser.osgi</groupId>
+		<artifactId>osgi-servlet-tracker-whiteboard-servlets</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>osgi-servlet-tracker-whiteboard-servlets-hello</artifactId>
+	<name>OSGi Servlet :: Tracker :: Whiteboard :: Servlets :: Hello</name>
+
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.bundle</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-Activator>com.adviser.osgi.servlet.tracker.whiteboard.servlets.hello.Activator</Bundle-Activator>
+                    </instructions>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
