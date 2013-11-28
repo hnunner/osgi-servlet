@@ -1,5 +1,5 @@
 /*
- * ContextServletActivator.java 25.11.2013 h.nunner
+ * Activator.java 25.11.2013 h.nunner
  */
 package com.adviser.osgi.servlet.context;
 
