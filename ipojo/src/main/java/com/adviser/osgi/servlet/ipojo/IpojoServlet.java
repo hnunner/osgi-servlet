@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.felix.ipojo.annotations.Bind;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Instantiate;
 import org.apache.felix.ipojo.annotations.Invalidate;
-import org.apache.felix.ipojo.annotations.Requires;
 import org.apache.felix.ipojo.annotations.Validate;
 import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
@@ -34,8 +34,20 @@ public class IpojoServlet extends HttpServlet {
     private static final String SERVLET_ALIAS = "/ipojo";
 
     /** http service injection */
-    @Requires
+//    @Requires
     private HttpService httpService;
+
+    /**
+     * Callback method for HttpService registrations.
+     *
+     * @param httpService
+     *          the HttpService being registrated
+     */
+    @Bind
+    public void bindHttpService(HttpService httpService) {
+        this.httpService = httpService;
+        LOG.info("Bound HttpService..");
+    }
 
 
     /**
