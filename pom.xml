@@ -12,7 +12,7 @@
 	<modules>
 		<module>context</module>
 		<module>tracker</module>
-		<!-- module>ipojo</module -->
+		<module>ipojo</module>
 	</modules>
 
 	<properties>
