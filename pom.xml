@@ -13,6 +13,7 @@
 		<module>context</module>
 		<module>tracker</module>
 		<module>ipojo</module>
+		<module>blueprint</module>
 	</modules>
 
 	<properties>
