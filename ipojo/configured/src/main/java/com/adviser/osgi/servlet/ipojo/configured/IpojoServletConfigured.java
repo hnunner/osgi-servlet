@@ -1,7 +1,7 @@
 /*
- * HelloWorldServlet.java 23.10.2013 h.nunner
+ * IpojoServletConfigured.java 23.10.2013 h.nunner
  */
-package com.adviser.osgi.servlet.ipojo;
+package com.adviser.osgi.servlet.ipojo.configured;
 
 import java.io.IOException;
 import java.util.Dictionary;
@@ -32,10 +32,10 @@ import org.osgi.service.http.NamespaceException;
  * @author h.nunner
  */
 @SuppressWarnings("serial")
-@Component(name = "IPojoServlet")
-public class IpojoServlet extends HttpServlet {
+@Component(name = "IPojoServletConfigured")
+public class IpojoServletConfigured extends HttpServlet {
 
-    private static final Logger LOG = Logger.getLogger(IpojoServlet.class.getName());
+    private static final Logger LOG = Logger.getLogger(IpojoServletConfigured.class.getName());
 
     /** servlet alias via config file injection */
     @Property(immutable = true, mandatory = true)
@@ -103,7 +103,7 @@ public class IpojoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         ServletOutputStream out = res.getOutputStream();
         StringBuilder sb = new StringBuilder();
-        sb.append(greeting).append(" iPOJO!");
+        sb.append(greeting).append(" iPOJO configured!");
         out.write(sb.toString().getBytes());
         out.close();
     }
