@@ -26,7 +26,7 @@ import org.osgi.service.http.NamespaceException;
 /**
  * This example shows how to retrieve the HttpService via iPOJO and register the servlet in just a few steps.<br>
  * <br>
- * The instantiation of the servlet is done by adding IPojoServlet*.cfg files into [apache-karaf-x.x.x]/etc,
+ * The instantiation of the servlet is done by adding IPojoServletConfigured-*.cfg files into [apache-karaf-x.x.x]/etc,
  * containing key value pairs of the annotated properties.
  *
  * @author h.nunner
