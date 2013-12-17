@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	<bean id="blueprintServlet" class="com.adviser.osgi.servlet.blueprint.BlueprintServlet">
+	</bean>
+	<service ref="blueprintServlet" interface="javax.servlet.http.HttpServlet">
+		<service-properties>
+			<entry key="alias" value="/blueprint" />
+		</service-properties>
+	</service>
+</blueprint>
