@@ -11,4 +11,4 @@ osgi:install -s mvn:org.osgi/org.osgi.compendium/4.2.0
 osgi:install -s mvn:org.apache.felix/org.apache.felix.ipojo/1.11.0
 features:install http
 
-osgi:install -s mvn:com.adviser.osgi/osgi-servlet-ipojo/0.0.1-SNAPSHOT
+osgi:install -s mvn:com.adviser.osgi/osgi-servlet-ipojo-instantiate/0.0.1-SNAPSHOT

@@ -1,0 +1,14 @@
+###################### BEFORE DEPLOYMENT ######################
+# create config file: [karaf_home]/etc/org.ops4j.pax.web.cfg  #
+#            content: org.osgi.service.http.port=8080         #
+#                     org.apache.felix.http.jettyEnabled=true #
+###############################################################
+
+osgi:install -s mvn:javax.servlet/com.springsource.javax.servlet/2.5.0
+osgi:install -s mvn:javax.el/com.springsource.javax.el/1.0.0
+osgi:install -s mvn:javax.servlet/com.springsource.javax.servlet.jsp/2.1.0
+osgi:install -s mvn:org.osgi/org.osgi.compendium/4.2.0
+osgi:install -s mvn:org.apache.felix/org.apache.felix.ipojo/1.11.0
+features:install http
+
+osgi:install -s mvn:com.adviser.osgi/osgi-servlet-ipojo-configured/0.0.1-SNAPSHOT

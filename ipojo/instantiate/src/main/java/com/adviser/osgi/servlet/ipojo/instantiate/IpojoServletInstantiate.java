@@ -1,7 +1,7 @@
 /*
- * HelloWorldServlet.java 23.10.2013 h.nunner
+ * IpojoServletInstantiate.java 23.10.2013 h.nunner
  */
-package com.adviser.osgi.servlet.ipojo;
+package com.adviser.osgi.servlet.ipojo.instantiate;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -28,10 +28,10 @@ import org.osgi.service.http.NamespaceException;
 @SuppressWarnings("serial")
 @Component(immediate = true)
 @Instantiate
-public class IpojoServlet extends HttpServlet {
+public class IpojoServletInstantiate extends HttpServlet {
 
-    private static final Logger LOG = Logger.getLogger(IpojoServlet.class.getName());
-    private static final String SERVLET_ALIAS = "/ipojo";
+    private static final Logger LOG = Logger.getLogger(IpojoServletInstantiate.class.getName());
+    private static final String SERVLET_ALIAS = "/ipojo-instantiate";
 
     /** http service injection */
     @Requires
