@@ -38,10 +38,10 @@ public class IpojoServletConfigured extends HttpServlet {
     private static final Logger LOG = Logger.getLogger(IpojoServletConfigured.class.getName());
 
     /** servlet alias via config file injection */
-    @Property(immutable = true, mandatory = true)
+//    @Property(immutable = true, mandatory = true)
     private String servletAlias;
     /** greeting via config file injection */
-    @Property
+//    @Property
     private String greeting;
 
     /** http service injection */
@@ -75,7 +75,32 @@ public class IpojoServletConfigured extends HttpServlet {
 
 
     /**
-     * Callback for property changes.<br>
+     * Update callback for servlet alias property.
+     *
+     * @param alias
+     *          the new alias
+     */
+    @Property(name="servletAlias")
+    public void updateAlias(String alias) {
+        this.servletAlias = alias;
+        LOG.info("new alias: " + alias);
+    }
+
+    /**
+     * Update callback for greeting property.
+     *
+     * @param greeting
+     *          the new greeting
+     */
+    @Property(name="greeting")
+    public void updateGreeting(String greeting) {
+        this.greeting = greeting;
+        LOG.info("new greeting: " + greeting);
+    }
+
+
+    /**
+     * Callback for general property changes.<br>
      * <br>
      * Invoked, when changes of any property in the corresponding cfg file occured.
      *
